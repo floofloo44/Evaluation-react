@@ -8,7 +8,7 @@ export default function Serie(props){
     return (
     <div className="mx-4">
         <div className="card mt-4">
-                <img src={show.images.banner} className="card-img-top" alt="banner"/>
+                <img src={show.images.banner} className="card-img-botom" alt="banner"/>
                 <div className="card-body">
                     <h1 className="card-title">{show.title} ({show.creation})</h1>
                     <p className="info">{show.seasons} seasons |{show.episodes} episodes</p>
