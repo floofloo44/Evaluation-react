@@ -1,0 +1,33 @@
+body {
+    background-color: rgba(0, 0, 0, 0.877);
+}
+.badge {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    border-style:inset;
+    font-size: 0.9em;
+    margin-right: 1em;
+}
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-style: italic;
+}
+.card {
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(148, 37, 37);
+    border-radius: 20pt;
+    border-top-left-radius: 20pt;
+    border: rgb(255, 255, 255);
+}
+.card-text {
+    text-align: justify;
+    font-size: 1.1em;
+}
+.fav {
+    color: rgb(255, 196, 0);
+}
+.no-fav {
+    color: rgb(255, 255, 255);
+}
