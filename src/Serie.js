@@ -1,35 +1,23 @@
-import React, { useState } from 'react'
-import Show from './Serie'
+import React from 'react'
+import FavBtn from './Favoris';
+import './css/index.css'
 
-export default function SerieList(props) {
-    const [searchTerm, setSearchTerm] = useState();
-    function research(event) {
-        let value = event.target.value;
-        setSearchTerm(value);
-        if (event === props.title) {
-        }
-    }
+export default function Serie(props){
+    const {show} =props;
+    const genres =show.genres.map(genre =><span key={genre} className="badge">{genre}</span>);
     return (
-        <div>
-            <div>
-                <div className="container">
-                <p className="navbar"></p>
-                <form className="flex">
-                <input onInput={event => setSearchTerm(event.target.value)} className="form-control bg-light " type="text" placeholder="Recherche" name="Search" onChange={research}/>
-                </form>
-            </div>
-        </div>{
-        props.shows.filter((show)=>{
-            if (searchTerm === undefined){
-                return show
-            } else if (show.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-                return show
-            } 
-                return false
-        }).map((show) => {
-            return (
-            <Show key={show.id} show={show}/>)})
-        }
+    <div className="mx-4">
+        <div className="card mt-4">
+                <img src={show.images.banner} className="card-img-botom" alt="banner"/>
+                <div className="card-body">
+                    <h1 className="card-title">{show.title} ({show.creation})</h1>
+                    <p className="info">{show.seasons} seasons |{show.episodes} episodes</p>
+                    <p className="card-text">{show.description}</p>
+                    <div className="d-flex justify-content-between">
+                    <div>{genres}</div>
+                    <FavBtn show={show} favorite={show.user.favorited}/>
+                    </div>
+                </div>
         </div>
-    )
+    </div>)
 }
