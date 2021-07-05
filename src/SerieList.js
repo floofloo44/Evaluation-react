@@ -11,13 +11,13 @@ export default function SerieList(props) {
     }
     return (
         <div>
-        <div>
-        <div className="container">
-        <p className="navbar"></p>
-        <form className="flex">
-        <input onInput={event => setSearchTerm(event.target.value)} className="form-control bg-light " type="text" placeholder="Recherche" name="Search" onChange={research}/>
-        </form>
-        </div>
+            <div>
+                <div className="container">
+                <p className="navbar"></p>
+                <form className="flex">
+                <input onInput={event => setSearchTerm(event.target.value)} className="form-control bg-light " type="text" placeholder="Recherche" name="Search" onChange={research}/>
+                </form>
+            </div>
         </div>{
         props.shows.filter((show)=>{
             if (searchTerm === undefined){
